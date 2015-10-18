@@ -1,0 +1,90 @@
+@import "setup";
+
+// WEBSITE COLORS
+
+$lightblue: #dceff5;
+$seablue: #4d899e;
+$sharkgrey: #294149;
+$midnight: #030303;
+
+@mixin fontSize($number, $weight) {
+	font-size: $number * 1px;
+	font-size: ($number / 10) * 1rem;
+	font-weight: ($weight);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@include fontSize(16, 400);
+	font-family: 'Play', sans-serif;
+	line-height: 1;
+	// margin: 0;
+	// left: 0;
+	background: linear-gradient(to top, rgba(77,137,158, 0.10) 0%, rgba(0, 0, 0, 0.30) 100%), url("darkness.jpg") no-repeat center fixed;
+	background-color: $seablue;
+	background-size: cover;
+	color: $lightblue;
+	margin: 0 0 100px;	
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+	text-align: center;
+	line-height: 1.5;
+}
+
+h1 {
+	@include fontSize(40, 700);
+	line-height: 1;
+	margin: 0;
+	text-align: center;
+}
+
+.up {
+	text-transform: uppercase;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+button {
+	display: block;
+	@include fontSize(18,700);
+	text-transform: uppercase;
+	padding: 10px 30px;
+	margin: 20px auto;
+	color: #ccc;
+	background-color: #555;
+	background: linear-gradient(#888, #555);
+	border: 0 none;
+	border-radius: 3px;
+	text-shadow: 0 -1px 0 #000;
+	box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+	cursor: pointer;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Games Ranker</title>
+  <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Welcome to the New Games Ranker!</h1>
+    
+    <h2>What gaming platform do you have?</h2>
+    
+    <form>
+      <select name="platform" id="platform">
+        <option value="pc">PC</option>
+        <option value="ps4">PlayStation 4</option>
+        <option value="ps3">PlayStation 3</option>
+        <option value="xboxone">Xbox One</option>
+        <option value="xbox360">Xbox 360</option>
+        <option value="wii-u">Wii U</option>
+      </select>
+    <button class="platformButton up" title="A submit button after you've chosen your platform choice.">Submit!</button>
+    </form>
+
+    <form>
+      <select name="ranking" id="ranking">
+        <option value="90">Score: 90-100</option>
+        <option value="80">Score: 80-89</option>
+        <option value="70">Score: 70-79</option>
+        <option value="60">Score: 60-69</option>
+        <option value="50">Score: Below 59</option>
+      </select>
+    <button class="rankingButton up" title="A submit button after you've chosen your ranking choice.">Show me!</button>
+    </form>
+
+    <h2 class="wait">Grabbing your games! One moment please...</h2>
+    <h2 class="conclusion">Here are the top rated games from 2014/2015!</h2>
+    
+    <div class="container" id="gameInfo">
+    </div>
+  </div>
+
+  <!-- <img src="placeholder.png" alt="weather icon" class="weather_image">
+  <span class="weather_string">{ Weather Text }</span>
+  <p class="temp"> <span class="temp_c">##</span>&#176;C</p>
+  <p class="city_name">{ City Name }</p>
+  <p class="date_time">{ Date and Time }</p> -->
+
+
+<!-- load jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- load external  -->
+<script src="gameRanker.js"></script>
+	
+</body>
+</html>

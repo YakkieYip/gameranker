@@ -1,0 +1,42 @@
+// http:www.giantbomb.com/api/[RESOURCE-TYPE]/[RESOURCE-ID]/?api_key=[YOUR-KEY]&format=[RESPONSE-DATA-FORMAT]&field_list=[COMMA-SEPARATED-LIST-OF-RESOURCE-FIELDS]
+
+// Resource Type: This is the type of resource you want to get information on. Game is the base type.
+
+// Resource ID: This is the ID of the resource. The easiest way to find this is to browse Giant Bomb. The resource IDs are in the URLs of the pages in the wiki. (example: http://www.giantbomb.com/metroid-prime-3-corruption/3030-4725/)
+
+// Response Data Format: There are (at least) two data formats. The default is XML which is an older standard, while another optional one is JSON which is the current (Spring 2013) standard for APIs. I would recommend JSON since it's awesome and supported natively by a lot of stuff (except browsers :()
+
+// Field List: You can optionally limit the response to only a few fields. It makes exploring the data easier, but for most Apps it may not be necessary. You can find the list of available fields in the API documentation.
+
+// If you are unfamiliar with URL parameters, they are typically written by adding a "?" mark at the end of a URL followed by a list of fields and values separated by the "&" symbol. The order does not matter and typically if you leave out a field, the default value will be used.
+
+// http://www.giantbomb.com/api/search?api_key=[YOUR-KEY]&format=[RESPONSE-DATA-FORMAT]&query=[YOUR-SEARCH]&resources=[SOME-TYPES]
+
+// http://www.giantbomb.com/api/search/?api_key=[YOUR-KEY]&format=json&query="metroid prime"&resources=game
+
+
+// @rangersedge said:
+// How do you search a game title and get back the id for the web page (3030-9169)? Or is there a way to download a complete game list with the associate identifiers?
+
+// If you look in the results, you'll see something like:
+
+// site_detail_url: "http://www.giantbomb.com/metroid-prime/3030-15473/",
+
+// For the links, yeah, you have to remove the trailing '/'. It's pretty funny that the Giant Bomb text editor (WYSIWYG) adds those and breaks the links and that they don't have redirects. Oh well.
+
+// BTW, glad people have found this useful. I haven't used the API since I wrote this post and I haven't checked the forums, but thanks to those who have left helpful comments!
+
+
+
+<!-- #11 Posted by andy (445 posts) - 6 years, 8 months ago -->
+Agreed.  I've gone ahead and added jsonp support.  Updated the documentation to be a little more clear about responses, formats, etc.
+
+For jsonp, just do:  http://api.giantbomb.com/game/1/?api_key=<your key>&format=jsonp&json_callback=<your callback name>
+
+Let me know if there's any problems.
+
+<!-- #2 Edited by Chaser324 (7459 posts) - 1 year, 1 month ago -->
+A few things:
+
+In the URL, it should say format=jsonp
+Get rid of the jsonpCallback parameter and set jsonp equal to "json_callback" - if you really want to override the default callback value, set jsonp to false not "false".

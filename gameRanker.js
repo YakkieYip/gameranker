@@ -59,12 +59,12 @@ gg.getRanking = function(platformInput){
         // console.log(object.name); //the object's name
       };
     });
-    // console.log(gg.rankedGamesArray);//a new array of objects!
+    console.log(gg.rankedGamesArray);//a new array of objects!
     gg.displayInfo(gg.rankedGamesArray);
 };
 
 gg.displayInfo = function(games){
-  $("#gameInfo").empty();
+  $("#gameInfo").empty( );
   $.each(games, function(index, value){
     console.log("DisplayInfo: " + value);
     var $title = $("<h3>").text(value.name);
